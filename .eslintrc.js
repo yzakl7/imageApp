@@ -1,4 +1,7 @@
-module.exports = {
-  root: true,
-  extends: '@react-native-community',
-};
+export default {
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"]
+  },
+}
