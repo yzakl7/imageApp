@@ -4,7 +4,7 @@ import Container from '../../components/Container';
 import CustomButton from '../../components/CustomButton';
 import CustomText from '../../components/CustomText';
 import Input from '../../components/Input'
-import { getColors, Typography } from '../../globalStyles';
+import { getColors } from '../../globalStyles';
 import dictionary from '../../lang/dictionary';
 import AuthContext from '../../navigation/AuthContext';
 
@@ -13,7 +13,6 @@ const {
 } = dictionary();
 
 const { danger, primary } = getColors();
-const { xl } = Typography;
 
 export default function Login({}) {
   const { signIn } = React.useContext(AuthContext);  

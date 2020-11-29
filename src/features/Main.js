@@ -1,7 +1,6 @@
 import * as React from 'react'
-import { View, Text } from 'react-native'
 import LoadingFullScreen from '../components/LoadingFullScreen';
-import { getStorageState, setStorageState } from '../utilities/userDataStorage';
+import { getStorageState } from '../utilities/userDataStorage';
 import ROUTES from '../navigation/Routes';
 import Navigator from '../navigation/Navigator';
 import AuthContext from '../navigation/AuthContext';
@@ -43,7 +42,9 @@ export default function Main() {
     }
   );
 
-  const authContext = React.useMemo(
+  const authContext = React.useMemo( 
+    // this is for memoization, so the app wont need to perform actions every time
+    // as result will be "remebered"
     () => ({
       signIn: data => {
         return new Promise((resolve, reject) => {
@@ -70,7 +71,7 @@ export default function Main() {
         dispatch({ type: 'RESTORE_TOKEN', token: userToken });
       } catch (e) {
         dispatch({ type: 'SIGN_OUT', token: null });
-        // Restoring token failed
+        // Restoring token failed, sign out action dispatched
       }
       setIsLoading(false)
     };
@@ -79,8 +80,9 @@ export default function Main() {
 
   if (isLoading) return <LoadingFullScreen />
 
+  // context is really helpful to pass data to non direct child
   return (
-    <AuthContext.Provider value={authContext}>
+    <AuthContext.Provider value={authContext}> 
       <Navigator isLoggedIn={!!state.userToken}/>
     </AuthContext.Provider>
   );

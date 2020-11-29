@@ -38,7 +38,7 @@ const LoggedInContent = () => {
       tabBarPosition={'bottom'}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color }) => {
-          let iconName = 'md-chatbubble-ellipses-outline';
+          let iconName;
           if (route.name === HOME_ROUTE) {
             iconName = focused
               ? 'planet'
@@ -63,11 +63,12 @@ const LoggedInContent = () => {
     </Tab.Navigator>
   )
 }
-
+/* React navigator changed implementation as of v5 */
 const Navigator = ({isLoggedIn}) => {
   const screenOptions = {
     headerShown: false,
   }
+  // now this is the proper way of hiding routes if logged of
   return (
       <NavigationContainer>
         <Stack.Navigator screenOptions={screenOptions} name={MAIN_ROUTE}>

@@ -1,6 +1,6 @@
 export const getColors = () => {
-  // we can add a layout contex, so that having a darkmode
-  // would be done easily
+  // we can add a settings contex, so that having a darkmode
+  // would be possible
   return { ...lightMode}
 }
 

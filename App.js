@@ -9,6 +9,8 @@
 import React from 'react';
 import Main from './src/features/Main';
 
+/* wolololo */
+
 const App = () => <Main/>
 
 export default App;

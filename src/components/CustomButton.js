@@ -1,6 +1,6 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import { getColors, Typography } from '../globalStyles';
+import { View, StyleSheet, TouchableOpacity } from 'react-native'
+import { getColors } from '../globalStyles';
 
 const { elementBackground } = getColors();
 

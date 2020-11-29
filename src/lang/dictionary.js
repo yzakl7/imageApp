@@ -1,5 +1,6 @@
 const dictionary = () => {
   return { ...english }
+  // here we can add logic to select proper language, maybe a context for settings
 }
 
 export default dictionary
